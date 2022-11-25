@@ -45,9 +45,12 @@ function Login() {
       token
     } = await fetchApi('https://odonteo-backend.herokuapp.com/login', options);
     
+
+
     if (apiMessage === 'Login efetuado com sucesso!') {
       localStorage.setItem('user', JSON.stringify(user)); 
       localStorage.setItem('token', JSON.stringify(token));
+      console.log(message);
       navigate('/');
     } else {
       showMessage(setMessage, apiMessage, 'error');
